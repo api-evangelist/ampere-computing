@@ -1,17 +1,34 @@
 aid: ampere-computing
 name: Ampere Computing
-description: 'Ampere Computing is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Ampere Computing is a Santa Clara, California semiconductor company founded
+  in 2018 by Renee James and now part of the SoftBank Group. It designs Arm-based Cloud
+  Native Processors — the Ampere Altra and Altra Max families (up to 128 cores) and
+  the flagship AmpereOne family (up to 192 single-threaded cores) — for cloud, AI inference
+  and edge deployments. Alongside the silicon it ships a software stack: Ampere Optimized
+  AI frameworks (PyTorch, TensorFlow, ONNX Runtime, llama.cpp, Ollama) distributed as
+  first-party container images, tuned GCC/glibc/binutils builds, performance and porting
+  tooling, and an arm64 developer community. Ampere publishes no public developer API —
+  its developer program is a hardware, tooling and porting program rather than an API
+  program.'
 url: https://raw.githubusercontent.com/api-evangelist/ampere-computing/refs/heads/main/apis.yml
+image: https://uawartifacts.blob.core.windows.net/upload-files/Ampere_Chip_Primary_Share_Image_fd401877af.jpg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Semiconductors
+- Processors
+- Cloud Infrastructure
+- Arm64
+- AI Inference
+- Edge Computing
+- Compute Hardware
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +37,61 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://amperecomputing.com/
+- type: DeveloperPortal
+  url: https://amperecomputing.com/developers
+- type: Support
+  url: https://amperecomputing.com/company/support-center
+- type: Community
+  url: https://community.amperecomputing.com/
+- type: Blog
+  url: https://amperecomputing.com/blogs/category/all/1
+- type: GitHubOrganization
+  url: https://github.com/AmpereComputing
+- type: Security
+  url: https://amperecomputing.com/products/product-security
+- type: VulnerabilityDisclosure
+  url: security/ampere-computing-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/ampere-computing-domain-security.yml
+- type: Packages
+  url: packages/ampere-computing-packages.yml
+- type: LLMsTxt
+  url: llms/ampere-computing-llms.txt
+- type: PrivacyPolicy
+  url: https://amperecomputing.com/home/privacy-policy
+- type: SignUp
+  url: https://amperecomputing.com/auth/register
+- type: Login
+  url: https://amperecomputing.com/auth/login
+- type: Newsroom
+  url: https://amperecomputing.com/company/newsroom
+- type: Newsletter
+  url: https://amperecomputing.com/newsletter
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 'Ampere runs an Azure API Management gateway at api.amperecomputing.com, but
+    its developer portal publicly lists only Azure''s stock sample "Echo API" and the
+    default Starter/Unlimited products — there is no Ampere API on it, and the Developer
+    Center at /developers is a hardware porting, tooling and benchmarking programme
+    with no API reference, spec, SDK or key issuance anywhere in the 1,075-URL sitemap.'
+  evidence:
+  - url: https://apim-ampere-prod.developer.azure-api.net/developer/apis?api-version=2022-04-01-preview
+    status: 200
+  - url: https://api.amperecomputing.com/openapi.json
+    status: 404
+  - url: https://amperecomputing.com/openapi.json
+    status: 404
+  - url: https://amperecomputing.com/.well-known/agent-card.json
+    status: 404
+  - url: https://amperecomputing.com/llms.txt
+    status: 404
+  - url: https://amperecomputing.com/sitemap.xml
+    status: 200
+  checked: '2026-08-06'

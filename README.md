@@ -42,5 +42,20 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ampere Computing is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Ampere Computing is a Santa Clara, California semiconductor company founded in 2018 by Renee James
+and now part of the SoftBank Group. It designs Arm-based Cloud Native Processors — the Ampere Altra
+and Altra Max families (up to 128 cores) and the flagship AmpereOne family (up to 192 single-threaded
+cores) — for cloud, AI inference and edge deployments, alongside a software stack of Ampere Optimized
+AI frameworks, tuned toolchains, and performance and porting tooling.
+
+**Ampere Computing publishes no public API.** Contract discovery on 2026-08-06 probed every Ampere
+host for OpenAPI, Swagger, GraphQL, AsyncAPI, MCP and A2A surfaces and found none. The Azure API
+Management gateway at `api.amperecomputing.com` is live, but its developer portal publicly lists only
+Azure's stock sample "Echo API" and the default Starter/Unlimited products. See `x-coverage` in
+`apis.yml` for the probe evidence.
+
+- Website — https://amperecomputing.com/
+- Developer Center — https://amperecomputing.com/developers
+- Developer community — https://community.amperecomputing.com/
+- GitHub — https://github.com/AmpereComputing
+- Product Security Center (PSIRT) — https://amperecomputing.com/products/product-security

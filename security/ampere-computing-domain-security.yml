@@ -1,0 +1,31 @@
+generated: '2026-08-06'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: amperecomputing.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 10 17:18:29 2026 GMT
+  hsts: false
+  chain_certs: 4
+  chain_verifies: true
+- host: api.amperecomputing.com
+  https: true
+  cert_subject: CN=api.amperecomputing.com
+  cert_issuer: 'C=US, O=GoDaddy.com, CN=GoDaddy TLS Intermediate CA DV - R1v1'
+  cert_not_before: Jun  8 21:46:34 2026 GMT
+  cert_expires: Dec 23 21:46:34 2026 GMT
+  chain_certs: 2
+  chain_verifies: false
+  chain_error: 'openssl verify code 20 (unable to get local issuer certificate); curl
+    exits 60 without -k, while the control host amperecomputing.com verifies cleanly
+    from the same trust store — the gateway serves an incomplete/unanchored chain'
+  note: Azure API Management gateway (apim-ampere-prod.azure-api.net); not listed in
+    apis.yml because no public API product is published on it
+domains:
+- domain: amperecomputing.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

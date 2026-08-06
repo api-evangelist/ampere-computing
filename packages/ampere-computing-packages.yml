@@ -1,0 +1,82 @@
+generated: '2026-08-06'
+method: searched
+source: Docker Hub, Hugging Face, PyPI, npm registry queries + amperecomputing.com/developers
+note: 'Ampere Computing publishes no API client libraries — it has no public API. What
+  it does publish first-party are runtime artifacts: Ampere Optimized AI framework
+  container images and optimized model weights. These are recorded as Packages; NO
+  `SDKs` pointer is wired in apis.yml, because none of these is an API client library
+  and claiming otherwise would be false credit on the sdk_count check.'
+packages:
+- language: container
+  registry: dockerhub
+  namespace: amperecomputingai
+  name: amperecomputingai/llama.cpp
+  url: https://hub.docker.com/r/amperecomputingai/llama.cpp
+  install: docker pull amperecomputingai/llama.cpp
+  official: true
+  pulls: 15103
+  description: Ampere Optimized llama.cpp for arm64 Ampere processors
+- language: container
+  registry: dockerhub
+  namespace: amperecomputingai
+  name: amperecomputingai/pytorch
+  url: https://hub.docker.com/r/amperecomputingai/pytorch
+  install: docker pull amperecomputingai/pytorch
+  official: true
+  pulls: 6112
+  description: Ampere Optimized PyTorch
+- language: container
+  registry: dockerhub
+  namespace: amperecomputingai
+  name: amperecomputingai/tensorflow
+  url: https://hub.docker.com/r/amperecomputingai/tensorflow
+  install: docker pull amperecomputingai/tensorflow
+  official: true
+  pulls: 4629
+  description: Ampere Optimized TensorFlow
+- language: container
+  registry: dockerhub
+  namespace: amperecomputingai
+  name: amperecomputingai/onnxruntime
+  url: https://hub.docker.com/r/amperecomputingai/onnxruntime
+  install: docker pull amperecomputingai/onnxruntime
+  official: true
+  pulls: 2655
+  description: Ampere Optimized ONNX Runtime
+- language: container
+  registry: dockerhub
+  namespace: amperecomputingai
+  name: amperecomputingai/ollama
+  url: https://hub.docker.com/r/amperecomputingai/ollama
+  install: docker pull amperecomputingai/ollama
+  official: true
+  pulls: 810
+  description: Ampere Optimized Ollama
+model_artifacts:
+- registry: huggingface
+  org: AmpereComputing
+  url: https://huggingface.co/AmpereComputing
+  official: true
+  model_count: 68
+  api: https://huggingface.co/api/models?author=AmpereComputing
+  description: 'Ampere-published GGUF model weights tuned for Ampere CPUs (e.g.
+    llama-3.3-70b-instruct-gguf, llama-3.1-8b-gguf, mistral-v0.3-7b-instruct-gguf).'
+source_code:
+- registry: github
+  org: AmpereComputing
+  url: https://github.com/AmpereComputing
+  official: true
+  repo_count: 88
+  note: 'Kernel/QEMU/EDK2 staging trees, Terraform modules for OCI/GCP Ampere instances,
+    ampere-performance-toolkit, ampere-porting-advisor, ampere-pmu-profiler,
+    ampere-gcc / ampere-glibc / ampere-binutils. No OpenAPI, Swagger, AsyncAPI or
+    apis.json file is present anywhere in the org (GitHub code search, 0 hits).'
+negative_findings:
+- registry: pypi
+  probed: ampere-computing, ampere-porting-advisor
+  result: 404 / not first-party
+  note: 'The PyPI package `ampere` exists (200) but is an unrelated battery-modelling
+    library by Neal Dawson-Elli — explicitly NOT Ampere Computing.'
+- registry: npm
+  probed: '@amperecomputing/sdk, ampere-computing'
+  result: 404

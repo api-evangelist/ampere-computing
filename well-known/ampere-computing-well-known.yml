@@ -1,0 +1,96 @@
+generated: '2026-08-06'
+method: probed
+source: live GET probes, 2026-08-06
+result: none
+note: 'Every /.well-known/ probe missed on every Ampere host. No apis.yml `WellKnown`
+  or `SecurityTxt` pointer is wired from this file — there is no discovery document
+  to point at, and emitting the pointer anyway would be false credit.'
+soft_404_control:
+  note: 'developer.amperecomputing.com 302s to amperecomputing.com/developers and answers
+    HTTP 200 with the SAME 174080-byte body for every path, including a nonsense control
+    path. Every 200 observed on that host is a soft 404 and is recorded as such.'
+  control_url: https://developer.amperecomputing.com/definitely-not-a-real-path-xyz123
+  control_status: 200
+  control_bytes: 174080
+hosts:
+- host: https://amperecomputing.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /sitemap.xml
+    status: 200
+    note: 1075 URLs; walked in full — no API reference, no spec, no legal/terms page
+- host: https://api.amperecomputing.com
+  note: Azure API Management gateway; JSON 404 envelope {"statusCode":404,"message":"Resource
+    not found"} on unmapped paths. Probed with -k because the host serves an unverifiable
+    chain (see security/ampere-computing-domain-security.yml).
+  documents:
+  - path: /
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /status-0123456789abcdef
+    status: 200
+    note: Azure APIM standard health probe — confirms the gateway is live, carries no
+      contract
+- host: https://developer.amperecomputing.com
+  note: 'SOFT-404 CATCH-ALL. Redirects to amperecomputing.com/developers and returns
+    200 for /openapi.json, /swagger.json, /api-docs, /llms.txt, /.well-known/security.txt
+    and /.well-known/agent-card.json — all byte-identical to the control path. None is
+    a hit.'
+  documents:
+  - path: /openapi.json
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+  - path: /swagger.json
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+  - path: /api-docs
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+  - path: /llms.txt
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+  - path: /.well-known/security.txt
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+  - path: /.well-known/agent-card.json
+    status: 200
+    verdict: soft-404 (HTML, identical to control)
+- host: https://community.amperecomputing.com
+  note: Discourse instance (amperedevelopers.hosted-by-discourse.com). Discourse's own
+    JSON surface answers anonymously, but that is the Discourse platform's API, not an
+    API Ampere Computing designed, documents or supports — it is NOT recorded as an
+    Ampere API.
+  documents:
+  - path: /site.json
+    status: 200
+    note: Discourse platform JSON, not an Ampere contract
+  - path: /.well-known/security.txt
+    status: 404
