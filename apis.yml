@@ -11,6 +11,17 @@ description: 'Ampere Computing is a Santa Clara, California semiconductor compan
   its developer program is a hardware, tooling and porting program rather than an API
   program.'
 url: https://raw.githubusercontent.com/api-evangelist/ampere-computing/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://uawartifacts.blob.core.windows.net/upload-files/Ampere_Chip_Primary_Share_Image_fd401877af.jpg
 x-type: company
 x-source: harvest:secondary-market
