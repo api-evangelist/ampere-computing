@@ -48,10 +48,10 @@ tags:
 - Processors
 - Cloud Infrastructure
 - Arm64
-- AI Inference
+- Inference
 - Edge Computing
 - Compute Hardware
-- Open-Source
+- Open Source
 tags_raw:
 - Company
 - Semiconductors
@@ -62,6 +62,7 @@ tags_raw:
 - Edge Computing
 - Compute Hardware
 - Open Source
+- Open-Source
 apis: []
 maintainers:
 - FN: Kin Lane
