@@ -64,20 +64,86 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ampere Computing is a Santa Clara, California semiconductor company founded in 2018 by Renee James
-and now part of the SoftBank Group. It designs Arm-based Cloud Native Processors — the Ampere Altra
-and Altra Max families (up to 128 cores) and the flagship AmpereOne family (up to 192 single-threaded
-cores) — for cloud, AI inference and edge deployments, alongside a software stack of Ampere Optimized
-AI frameworks, tuned toolchains, and performance and porting tooling.
+Ampere Computing is a Santa Clara, California semiconductor company founded in 2018 by Renee James and now part of the SoftBank Group. It designs Arm-based Cloud Native Processors — the Ampere Altra and Altra Max families (up to 128 cores) and the flagship AmpereOne family (up to 192 single-threaded cores) — for cloud, AI inference and edge deployments. Alongside the silicon it ships a software stack: Ampere Optimized AI frameworks (PyTorch, TensorFlow, ONNX Runtime, llama.cpp, Ollama) distributed as first-party container images, tuned GCC/glibc/binutils builds, performance and porting tooling, and an arm64 developer community. Ampere publishes no public developer API — its developer program is a hardware, tooling and porting program rather than an API program.
 
-**Ampere Computing publishes no public API.** Contract discovery on 2026-08-06 probed every Ampere
-host for OpenAPI, Swagger, GraphQL, AsyncAPI, MCP and A2A surfaces and found none. The Azure API
-Management gateway at `api.amperecomputing.com` is live, but its developer portal publicly lists only
-Azure's stock sample "Echo API" and the default Starter/Unlimited products. See `x-coverage` in
-`apis.yml` for the probe evidence.
+**Areas:** Company · Semiconductors · Processors · Cloud Infrastructure · Arm64 · Inference · Edge Computing · Compute Hardware · Open Source
 
-- Website — https://amperecomputing.com/
-- Developer Center — https://amperecomputing.com/developers
-- Developer community — https://community.amperecomputing.com/
-- GitHub — https://github.com/AmpereComputing
-- Product Security Center (PSIRT) — https://amperecomputing.com/products/product-security
+## Ampere Computing on APIs.io
+
+Everything profiled for Ampere Computing is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ampere-computing/](https://apis.io/providers/ampere-computing/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ampere Computing Domain Security](https://apis.io/security/ampere-computing/ampere-computing-domain-security/)
+- [Ampere Computing Vulnerability Disclosure](https://apis.io/security/ampere-computing/ampere-computing-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://amperecomputing.com/)
+- [Sign up](https://amperecomputing.com/auth/register)
+- [Support](https://amperecomputing.com/company/support-center)
+- [Blog](https://amperecomputing.com/blogs/category/all/1)
+- [Security](https://amperecomputing.com/products/product-security)
+- [Privacy policy](https://amperecomputing.com/home/privacy-policy)
+- [GitHub](https://github.com/AmpereComputing)
+
+## API Evangelist rating
+
+**Kin Score 14.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 49.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 23.7 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ampere-computing/](https://apis.io/providers/ampere-computing/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ampere Computing: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ampere-computing/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
